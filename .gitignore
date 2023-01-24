@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+scrapy.cfg
+Makaan_scrape/__pycache__/
+Makaan_scrape/middlewares.py
+Makaan_scrape/pipelines.py
+Makaan_scrape/settings.py
+Makaan_scrape/spiders/__pycache__/
