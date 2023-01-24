@@ -10,7 +10,7 @@ class makaan_spider(scrapy.Spider):
 
 #https://www.makaan.com/listings?listingType=buy&pageType=CITY_URLS&cityName=Hyderabad&cityId=12&templateId=MAKAAN_CITY_LISTING_BUY&sellerRating=3plus&page=4
     def start_requests(self):
-        for i in range(1,4):
+        for i in range(1,2123):
             yield scrapy.Request(url=self.url.format(i))
 
     def parse(self, response):
