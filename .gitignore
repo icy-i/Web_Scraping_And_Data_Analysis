@@ -5,3 +5,4 @@ Makaan_scrape/middlewares.py
 Makaan_scrape/pipelines.py
 Makaan_scrape/settings.py
 Makaan_scrape/spiders/__pycache__/
+Makaan_scrape/spiders/config.py

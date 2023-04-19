@@ -1,17 +1,21 @@
 import scrapy
-
-
+from .config import API
+from scraper_api import ScraperAPIClient
+client = ScraperAPIClient(API)
 class makaan_spider(scrapy.Spider):
     name = 'MAKAAN'
     allowed_domains = ['www.makaan.com']
-    #start_urls=['https://www.makaan.com/hyderabad-residential-property/buy-property-in-hyderabad-city?page=2']
+    # start_urls=[]
     #url='https://www.makaan.com/listings?listingType=buy&pageType=CITY_URLS&cityName=Hyderabad&cityId=12&templateId=MAKAAN_CITY_LISTING_BUY&sellerRating=3plus&page={}'
     url = 'https://www.makaan.com/hyderabad-residential-property/buy-property-in-hyderabad-city?page={}'
+    # for i in range(1,2239):
+    #      start_urls.append(url.format(i))
+         
 
 #https://www.makaan.com/listings?listingType=buy&pageType=CITY_URLS&cityName=Hyderabad&cityId=12&templateId=MAKAAN_CITY_LISTING_BUY&sellerRating=3plus&page=4
     def start_requests(self):
-        for i in range(1,2123):
-            yield scrapy.Request(url=self.url.format(i))
+        for i in range(1,2239):
+            yield scrapy.Request(client.scrapyGet(url=self.url.format(i)))
 
     def parse(self, response):
         properties=response.css('li.cardholder')
